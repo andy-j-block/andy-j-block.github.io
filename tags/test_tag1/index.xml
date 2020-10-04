@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>test_tag1 on Andy Block</title>
-    <link>http://andy-j-block.github.io/tags/test_tag1/</link>
+    <link>https://andy-j-block.github.io/tags/test_tag1/</link>
     <description>Recent content in test_tag1 on Andy Block</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sat, 03 Oct 2020 18:04:52 -0400</lastBuildDate><atom:link href="http://andy-j-block.github.io/tags/test_tag1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Oct 2020 18:04:52 -0400</lastBuildDate><atom:link href="https://andy-j-block.github.io/tags/test_tag1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>COVID Web Scraper</title>
-      <link>http://andy-j-block.github.io/posts/covid_web_scraper/</link>
+      <link>https://andy-j-block.github.io/posts/covid_web_scraper/</link>
       <pubDate>Sat, 03 Oct 2020 18:04:52 -0400</pubDate>
       
-      <guid>http://andy-j-block.github.io/posts/covid_web_scraper/</guid>
+      <guid>https://andy-j-block.github.io/posts/covid_web_scraper/</guid>
       <description>The full git repository for this project can be found here.
 This is a test sentence  Sub-header  markdown style works  </description>
     </item>
