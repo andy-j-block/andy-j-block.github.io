@@ -3,13 +3,15 @@ languageCode = "en-us"
 title = "Andy Block"
 theme = "hugo-ink"
 
+canonifyURLs=true
+
 copyright = "© Copyright notice"
 
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-googleAnalytics = "UA-123-45"
+googleAnalytics = ""
 
 [params]
 	subtitle = "Research engineer at Ford Motor Co and aspiring data scientist"
