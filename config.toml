@@ -1,0 +1,70 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Andy Block"
+theme = "hugo-ink"
+
+copyright = "© Copyright notice"
+
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+googleAnalytics = "UA-123-45"
+
+[params]
+	subtitle = "Research engineer at Ford Motor Co and aspiring data scientist"
+
+	# Optional 64x64 avatar image.
+	avatar = "https://i.imgur.com/CswmPSe_d.webp?maxwidth=728&fidelity=grand"
+	
+	featherIconsCDN = true
+
+	mode = "auto" # "dark" or "auto"
+	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+
+
+# Nav.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Resume"
+url = "/resume"
+weight = 4
+
+[[menu.main]]
+name = "Contact"
+url = "/contact"
+weight = 5
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 6
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/andy-j-block"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://linkedin.com/in/andy-j-block"
+
+[taxonomies]
+   tag = "tags"
