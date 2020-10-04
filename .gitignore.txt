@@ -1,0 +1,10 @@
+archetypes/
+bin/
+content/
+data/
+layouts/
+resources/
+static/
+themes/
+config.toml
+LICENSE
