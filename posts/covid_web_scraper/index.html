@@ -32,7 +32,7 @@ if (!doNotTrack) {
 <meta itemprop="description" content="This is a test description">
 <meta itemprop="datePublished" content="2020-10-03T18:04:52-04:00" />
 <meta itemprop="dateModified" content="2020-10-03T18:04:52-04:00" />
-<meta itemprop="wordCount" content="20">
+<meta itemprop="wordCount" content="1296">
 
 
 
@@ -91,11 +91,19 @@ if (!doNotTrack) {
 			</li>
 			
 			<li>
+				<a href="/endorsements">Endorsements</a>
+			</li>
+			
+			<li>
 				<a href="/contact">Contact</a>
 			</li>
 			
 			<li>
 				<a href="/tags">Tags</a>
+			</li>
+			
+			<li>
+				<a href="/test">Test</a>
 			</li>
 			
 		</ul>
@@ -120,13 +128,127 @@ if (!doNotTrack) {
 					
 			<div class="markdown">
 				<p>The full git repository for this project can be found <a href="https://github.com/andy-j-block/COVID_Web_Scraper">here</a>.</p>
-<h2 id="this-is-a-test-sentence">This is a test sentence</h2>
-<hr>
-<h3 id="sub-header">Sub-header</h3>
+<div align="justify">   
+<h3 id="table-of-contents">Table of Contents</h3>
+<ol>
+<li><a href="#intent">Project Intent</a></li>
+<li><a href="#data_sources">Data Sources</a></li>
+<li><a href="#setup">Setup and Running</a></li>
+<li><a href="#helper_fcns">Helper Function Explanations</a></li>
+</ol>
+<h2 id="project-intent--a-nameintenta">Project Intent  <a name="intent"></a></h2>
+<p>This web scraping tool collects COVID data from two sources (John Hopkins Github and the COVID Tracking Project), reformats the datetime information, determines what data is new, and appends it into the master dataset.</p>
+<p>This web scraper uses two methods for data collection: using the Selenium module and associated Chromedriver to navigate to the COVID Tracking Project website and pull daily case data from their API, and launching a git shell to pull ____ from the Johns Hopkins COVID19 data repo.</p>
+<p>This tool was built while at Ford Motor Company for my section&rsquo;s technical specialist Reid.  He was keeping the team up to date on the latest COVID numbers locally and regionally through several Tableau visualizations.  Unfortunately though, the process he was using of manually collecting the data and formatting it properly was consuming a fair amount of his time, especially given that this preprocessing was a once- or twice-weekly process.  Thus, I decided to lend him a hand on this by automating the process, giving me an opportunity to practice my data scraping skills.</p>
+<h2 id="data-sources--a-namedata_sourcesa">Data Sources  <a name="data_sources"></a></h2>
 <ul>
-<li>markdown style works</li>
+<li>COVID Tracking Project at The Atlantic - <a href="https://covidtracking.com/data/api">https://covidtracking.com/data/api</a></li>
+<li>Johns Hopkins COVID-19 Data Repository - <a href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a></li>
 </ul>
-
+<h2 id="setup-and-running--a-namesetupa">Setup and Running  <a name="setup"></a></h2>
+<p>This Git repo can either be downloaded as a zip or cloned onto your machine.  There is an <code>environment.yml</code> file in the root directory that can be used to clone the conda environment used to build this program.</p>
+<p>The user need only run the <code>get_COVID_data.py</code> file in order to run the program, everything else is taken care of by the helper functions.  It performs the following tasks in order:</p>
+<h4 id="initialization"><em>Initialization</em></h4>
+<ul>
+<li>gets the directories commonly used in the program and stores their locations as variables</li>
+<li>gets the Chrome and Git bash executables for use later and stores their locations as variables</li>
+<li>gets the current day and month and stores those as variables for later use</li>
+</ul>
+<h4 id="covid-tracking-project-data"><em>COVID Tracking Project Data</em></h4>
+<ul>
+<li>creates an instance of the ChromeDriver webdriver and alerts the user if there is a Chrome/ChromeDriver version mismatch</li>
+<li>navigates to the COVID Tracking Project&rsquo;s web API and downloads the daily case data</li>
+<li>saves the most recent data into the root directory and moves old data to the <code>CTP_data</code> sub-folder</li>
+</ul>
+<h4 id="johns-hopkins-data"><em>Johns Hopkins Data</em></h4>
+<ul>
+<li>runs a Git pull on the data stored in the <code>JH_data</code> sub-folder using a subprocess and context manager</li>
+<li>scans the root directory for an existing instance of <code>JH_master.csv</code> file
+<ul>
+<li>if none found, a new <code>JH_master.csv</code> file is created and populated with all the existing data up to the date of the most recent Git pull</li>
+<li>if <code>JH_master.csv</code> found, read in this data as a pandas dataframe and continue</li>
+</ul>
+</li>
+<li>sets the <code>'Last_Update'</code> column as a datetime and determines the date of the last Git pull</li>
+<li>takes all of the new data since the last Git pull file by file and adds their contents to the <code>JH_master.csv</code></li>
+<li>saves the updated <code>JH_master.csv</code> file to the root directory</li>
+</ul>
+<p>Please see the following section for a more detailed explanation of all of the helper functions.</p>
+<h2 id="helper-function-explanations--a-namehelper_fcnsa">Helper Function Explanations  <a name="helper_fcns"></a></h2>
+<details><summary><strong><em>get_dirs</em></strong></summary>
+<p>
+<p>This function returns the locations of five directories commonly used throughout the program.  The subsequent helper files require many of these directories as inputs. The five directory outputs are as follows:</p>
+<ul>
+<li><code>root_dir</code> - the root directory on the host machine</li>
+<li><code>helper_files_dir</code> - the sub-directory containing all the helper files and modules</li>
+<li><code>downloads_dir</code> - the downloads folder of the host machine</li>
+<li><code>CTP_data_dir</code> - the directory where historical daily CTP reports will be moved to</li>
+<li><code>JH_data_dir</code> - the sub-directory within the JH github repo where the daily reports are stored</li>
+</ul>
+<p>The <code>downloads_dir</code> directory is the only directory located outside of the webscraper&rsquo;s repository.  Thus, it has been defaulted to the Downloads folder on Windows.  If this folder cannot be found (i.e., user running a different OS), the function will prompt the user to indentify the location of the host machine&rsquo;s Downloads folder.</p>
+</p>
+</details>
+<details><summary><strong><em>get_executables</em></strong></summary>
+<p>
+<p>This function allows for easier usage of this webscraper across operating systems by identifying the locations of the Chrome browser and Git bash executables.  It returns the following two variables:</p>
+<ul>
+<li><code>chrome_exe</code></li>
+<li><code>git_bash_exe</code></li>
+</ul>
+<p>Again, my personal computer runs Windows and thus I&rsquo;ve set the locations of these executables to their default locations on Windows.  However, if this program is run on a non-Windows machine, a warning box will open indicating that the executables cannot be found and a file dialog box is subsequently opened in which the user can identify their locations.</p>
+</p>
+</details>
+<details><summary><strong><em>get_todays_date</em></strong></summary>
+<p>
+<p>This function simply returns the day and month at the time of running the program.  They are stored as the following variables:</p>
+<ul>
+<li><code>current_day</code></li>
+<li><code>current_month</code></li>
+</ul>
+<p>These variables are used in the get_CTP_data function for file labeling purposes.</p>
+</p>
+</details>
+<details><summary><strong><em>create_webdriver</em></strong></summary>
+<p>
+<p>This function performs two actions:</p>
+<ul>
+<li>Aquires the version of Chrome currently installed on the host machine</li>
+<li>Creates an instance of the webdriver for use in get_CTP_data function</li>
+</ul>
+<p>Acquiring the Chrome version is accomplished via the win32api module, pulling the requisite information from the Chrome executable&rsquo;s file properties.  If a Chrome/ChromeDriver version mismatch is detected in the next step, the user will be displayed the current Chrome browser version and requested to download the associated ChromeDriver version.  This check obviously cannot run on non-Windows machines so it is effectively bypassed if this is the case.</p>
+<p>Creating an instance of the webdriver will confirm whether the correct version of ChromeDriver is available on the machine.  If not, the user will be prompted to download the correct ChromeDriver zip file.  The zip file contents are then extracted and moved to the <code>helper_files</code> directory.  The test is then run again and either passes if the user downloaded the correct ChromeDriver version or aborts after three failed attempts.  This breaks the entire program and a printed cancellation message is displayed.</p>
+</p>
+</details>
+<details><summary><strong><em>get_CTP_data</em></strong></summary>
+<p>
+<p>This function does the hard yards of getting the COVID Tracking Project (CTP) data, formatting the filename, moving the new data to where it needs to be.</p>
+<p>Selenium is powering the driver functionality to navigate within the browser.  After accessing the COVID Tracking Project&rsquo;s website, the driver clicks its way to the link where the target data is stored.</p>
+<p>One snag discovered during robustness testing was that sometimes the browser would timeout after requesting data from the API and the data would not be successfully downloaded.  Thus, I implemented my own timer to restart the process if the browser timeout issue occurred.</p>
+<p>Since these files contain daily data, the last part of this function will scan the contents of the root directory for an existing daily file and move it to the CTP_data sub-folder if it exists.  It&rsquo;s only at this point that the newly-downloaded daily file is renamed to include the <code>current_day</code> and <code>current_month</code> (from <code>get_todays_date</code> function) and moved to the root directory.</p>
+</p>
+</details>
+<details><summary><strong><em>get_JH_data</em></strong></summary>
+<p>
+<p>This function performs a Git pull on the JH repo stored in the <code>JH_data</code> folder.  It uses the <code>subprocess</code> module to open a Git bash using the executable found in the <code>git_bash_exe</code> variable.  It also employs a context manager to take care of opening and closing the subprocess.</p>
+</p>
+</details>
+<details><summary><strong><em>create_JH_master</em></strong></summary>
+<p>
+<p>This function creates a new <code>JH_master.csv</code> file if one does not already exist in the main root folder.  It loops thru all of the existing files in the <code>JH_data</code></p>
+</p>
+</details>
+<details><summary><strong><em>update_JH_master</em></strong></summary>
+<p>
+<p>This function performs three separate tasks:</p>
+<ul>
+<li>Sets the <code>'Last_Update'</code> column in the <code>JH_master</code> dataframe to a datetime data type and drops the time portion</li>
+<li>Determines the date of the most recent Git pull by shifting the last date entry back by 1 day (i.e. daily files labeled 12-08-2020 contains data dated as 12-09-2020)</li>
+<li>Determines the new data that need to be appended to <code>JH_master</code> and loops thru these files, concatenating them to <code>JH_master</code></li>
+<li>Saves the <code>JH_master</code> dataframe to the root directory</li>
+</ul>
+</p>
+</details>
+</div> 
 			</div>
 
 			<div class="tags">

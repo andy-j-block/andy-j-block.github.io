@@ -15,7 +15,8 @@
       
       <guid>https://andy-j-block.github.io/posts/covid_web_scraper/</guid>
       <description>The full git repository for this project can be found here.
-This is a test sentence  Sub-header  markdown style works  </description>
+Table of Contents  Project Intent Data Sources Setup and Running Helper Function Explanations  Project Intent  This web scraping tool collects COVID data from two sources (John Hopkins Github and the COVID Tracking Project), reformats the datetime information, determines what data is new, and appends it into the master dataset.
+This web scraper uses two methods for data collection: using the Selenium module and associated Chromedriver to navigate to the COVID Tracking Project website and pull daily case data from their API, and launching a git shell to pull ____ from the Johns Hopkins COVID19 data repo.</description>
     </item>
     
   </channel>
