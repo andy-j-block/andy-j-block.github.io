@@ -18,18 +18,11 @@
   </url>
   
   <url>
+    <loc>https://andy-j-block.github.io/contact/</loc>
+  </url>
+  
+  <url>
     <loc>https://andy-j-block.github.io/tags/</loc>
-    <lastmod>2020-12-30T18:04:52-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andy-j-block.github.io/tags/test_tag1/</loc>
-    <lastmod>2020-12-30T18:04:52-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andy-j-block.github.io/tags/test_tag2/</loc>
-    <lastmod>2020-12-30T18:04:52-04:00</lastmod>
   </url>
   
 </urlset>

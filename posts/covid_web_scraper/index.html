@@ -32,11 +32,11 @@ if (!doNotTrack) {
 <meta itemprop="description" content="Collects COVID case data from the COVID Tracking Project and Johns Hopkins for use in visualizations and dashboards">
 <meta itemprop="datePublished" content="2020-12-30T18:04:52-04:00" />
 <meta itemprop="dateModified" content="2020-12-30T18:04:52-04:00" />
-<meta itemprop="wordCount" content="1044">
+<meta itemprop="wordCount" content="1045">
 
 
 
-<meta itemprop="keywords" content="test_tag1,test_tag2," />
+<meta itemprop="keywords" content="" />
 <meta property="og:title" content="COVID Web Scraper" />
 <meta property="og:description" content="Collects COVID case data from the COVID Tracking Project and Johns Hopkins for use in visualizations and dashboards" />
 <meta property="og:type" content="article" />
@@ -95,10 +95,6 @@ if (!doNotTrack) {
 			</li>
 			
 			<li>
-				<a href="/tags">Tags</a>
-			</li>
-			
-			<li>
 				<a href="/test">Test</a>
 			</li>
 			
@@ -137,11 +133,11 @@ if (!doNotTrack) {
 <p>This tool was built while at Ford Motor Company for our team&rsquo;s technical specialist.  He was keeping us up to date on the latest COVID case numbers locally and regionally through several Tableau dashboards, but the process of manually collecting the data and formatting it properly was consuming a fair amount of his time, especially given that this was a once- or twice-weekly process.  Thus, I decided to lend him a hand by automating this process, giving me an opportunity to practice my data scraping skills and providing the team with a functional web scraper that could be employed on future projects.</p>
 <p>This program uses two methods for data collection: using HTTP requests to access the COVID Tracking Project&rsquo;s data API and pulling the latest data from the Johns Hopkins COVID19 data repository.</p>
 <h2 id="data-sources--a-namedata_sourcesa">Data Sources  <a name="data_sources"></a></h2>
-<p style="text-align:center;">
-   <img src="/CTP_JH_logos.png" />
-</p>
+<p><img src="/posts/CTP_JH_logos.png"
+style="float: center;"
+class="" /></p>
 <ul>
-<li><a href="https://covidtracking.com/data/api">COVID Tracking Project at The Atlantic (CTP)</a></li>
+<li><a href="https://covidtracking.com/data/api">The COVID Tracking Project at The Atlantic (CTP)</a></li>
 <li><a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins COVID-19 Data Repository (JH)</a></li>
 </ul>
 <h2 id="setup-and-running--a-namesetupa">Setup and Running  <a name="setup"></a></h2>
@@ -225,19 +221,12 @@ if (!doNotTrack) {
 <p>Once the mental gymnastics of determining the new data files is accomplished, these files are then looped through and concatenated to <code>JH_master</code>.  The data is finally saved to the <code>root_dir</code> as <code>JH_master.csv</code>.  However, if the program were run more than once in a day, no new data would exist, nothing would be concatenated, and the program simply ends.</p>
 </p>
 </details>
-</div> 
+<br>
+</div>
 			</div>
 
 			<div class="tags">
 				
-					
-						<ul class="flat">
-							
-							<li><a href="/tags/test_tag1">test_tag1</a></li>
-							
-							<li><a href="/tags/test_tag2">test_tag2</a></li>
-							
-						</ul>
 					
 				
 			</div></div>

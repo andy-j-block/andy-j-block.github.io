@@ -19,5 +19,17 @@ Table of Contents  Project Intent Data Sources Setup and Running Helper Function
 This tool was built while at Ford Motor Company for our team&amp;rsquo;s technical specialist. He was keeping us up to date on the latest COVID case numbers locally and regionally through several Tableau dashboards, but the process of manually collecting the data and formatting it properly was consuming a fair amount of his time, especially given that this was a once- or twice-weekly process.</description>
     </item>
     
+    <item>
+      <title>Contact</title>
+      <link>https://andy-j-block.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andy-j-block.github.io/contact/</guid>
+      <description>LinkedIn: https://www.linkedin.com/in/andy-j-block
+GitHub: https://github.com/andy-j-block
+Email: ablock91@gmail.com
+Phone: (914) 227-8321</description>
+    </item>
+    
   </channel>
 </rss>
