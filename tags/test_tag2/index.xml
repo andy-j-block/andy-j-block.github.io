@@ -7,16 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sat, 03 Oct 2020 18:04:52 -0400</lastBuildDate><atom:link href="https://andy-j-block.github.io/tags/test_tag2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 18:04:52 -0400</lastBuildDate><atom:link href="https://andy-j-block.github.io/tags/test_tag2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>COVID Web Scraper</title>
       <link>https://andy-j-block.github.io/posts/covid_web_scraper/</link>
-      <pubDate>Sat, 03 Oct 2020 18:04:52 -0400</pubDate>
+      <pubDate>Wed, 30 Dec 2020 18:04:52 -0400</pubDate>
       
       <guid>https://andy-j-block.github.io/posts/covid_web_scraper/</guid>
       <description>The full git repository for this project can be found here.
-Table of Contents  Project Intent Data Sources Setup and Running Helper Function Explanations  Project Intent  This web scraping tool collects COVID data from two sources (John Hopkins Github and the COVID Tracking Project), reformats the datetime information, determines what data is new, and appends it into the master dataset.
-This web scraper uses two methods for data collection: using the Selenium module and associated Chromedriver to navigate to the COVID Tracking Project website and pull daily case data from their API, and launching a git shell to pull ____ from the Johns Hopkins COVID19 data repo.</description>
+Table of Contents  Project Intent Data Sources Setup and Running Helper Function Explanations  Project Intent  This web scraping tool collects COVID data from two sources for use making COVID visualizations and dashboards.
+This tool was built while at Ford Motor Company for our team&amp;rsquo;s technical specialist. He was keeping us up to date on the latest COVID case numbers locally and regionally through several Tableau dashboards, but the process of manually collecting the data and formatting it properly was consuming a fair amount of his time, especially given that this was a once- or twice-weekly process.</description>
     </item>
     
   </channel>

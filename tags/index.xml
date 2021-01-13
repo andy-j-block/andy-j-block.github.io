@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sat, 03 Oct 2020 18:04:52 -0400</lastBuildDate><atom:link href="https://andy-j-block.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 18:04:52 -0400</lastBuildDate><atom:link href="https://andy-j-block.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>test_tag1</title>
       <link>https://andy-j-block.github.io/tags/test_tag1/</link>
-      <pubDate>Sat, 03 Oct 2020 18:04:52 -0400</pubDate>
+      <pubDate>Wed, 30 Dec 2020 18:04:52 -0400</pubDate>
       
       <guid>https://andy-j-block.github.io/tags/test_tag1/</guid>
       <description></description>
@@ -20,7 +20,7 @@
     <item>
       <title>test_tag2</title>
       <link>https://andy-j-block.github.io/tags/test_tag2/</link>
-      <pubDate>Sat, 03 Oct 2020 18:04:52 -0400</pubDate>
+      <pubDate>Wed, 30 Dec 2020 18:04:52 -0400</pubDate>
       
       <guid>https://andy-j-block.github.io/tags/test_tag2/</guid>
       <description></description>

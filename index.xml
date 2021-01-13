@@ -7,68 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Sat, 03 Oct 2020 18:04:52 -0400</lastBuildDate><atom:link href="https://andy-j-block.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Contact</title>
-      <link>https://andy-j-block.github.io/contact/</link>
-      <pubDate>Sat, 03 Oct 2020 19:14:52 -0400</pubDate>
-      
-      <guid>https://andy-j-block.github.io/contact/</guid>
-      <description>LinkedIn: https://www.linkedin.com/in/andy-j-block
-GitHub: https://github.com/andy-j-block
-Email: ablock91@gmail.com
-Phone: (914) 227-8321</description>
-    </item>
-    
+    <lastBuildDate>Wed, 30 Dec 2020 18:04:52 -0400</lastBuildDate><atom:link href="https://andy-j-block.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>COVID Web Scraper</title>
       <link>https://andy-j-block.github.io/posts/covid_web_scraper/</link>
-      <pubDate>Sat, 03 Oct 2020 18:04:52 -0400</pubDate>
+      <pubDate>Wed, 30 Dec 2020 18:04:52 -0400</pubDate>
       
       <guid>https://andy-j-block.github.io/posts/covid_web_scraper/</guid>
       <description>The full git repository for this project can be found here.
-Table of Contents  Project Intent Data Sources Setup and Running Helper Function Explanations  Project Intent  This web scraping tool collects COVID data from two sources (John Hopkins Github and the COVID Tracking Project), reformats the datetime information, determines what data is new, and appends it into the master dataset.
-This web scraper uses two methods for data collection: using the Selenium module and associated Chromedriver to navigate to the COVID Tracking Project website and pull daily case data from their API, and launching a git shell to pull ____ from the Johns Hopkins COVID19 data repo.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://andy-j-block.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://andy-j-block.github.io/about/</guid>
-      <description>Interests I&amp;rsquo;m an avid cycler, reader, and musician. I love spending time with my 100-year old grandmother.
- Jazz At Binghamton University, I was a member of the Hapur Jazz Orchestra as the lead alto saxophone player. I was also the president of the Harpur Jazz Project, the student group responsible for organizing performances feature world class jazz musicians. Grammy winners Pat Metheny and Bela Fleck and the Flecktones
-I&amp;rsquo;ve played with Joe Lovano, Tony Kadleck,</description>
-    </item>
-    
-    <item>
-      <title>Endorsements</title>
-      <link>https://andy-j-block.github.io/endorsements/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://andy-j-block.github.io/endorsements/</guid>
-      <description>Chris WilliamsSupervisor - Transmission Functional Safety, Ford Motor CompanyChris said these wonderful things about me.Chris said these wonderful things about me.Chris said these wonderful things about me.Chris said these wonderful things about me.Chris said these wonderful things about me.Chris said these wonderful things about me.Chris said these wonderful things about me.Chris said these wonderful things about me.
- Pedro Lujan?</description>
-    </item>
-    
-    <item>
-      <title>Resume</title>
-      <link>https://andy-j-block.github.io/resume/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://andy-j-block.github.io/resume/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://andy-j-block.github.io/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://andy-j-block.github.io/test/</guid>
-      <description>1 / 3Caption Text2 / 3Caption Two3 / 3Caption Three❮ ❯
-</description>
+Table of Contents  Project Intent Data Sources Setup and Running Helper Function Explanations  Project Intent  This web scraping tool collects COVID data from two sources for use making COVID visualizations and dashboards.
+This tool was built while at Ford Motor Company for our team&amp;rsquo;s technical specialist. He was keeping us up to date on the latest COVID case numbers locally and regionally through several Tableau dashboards, but the process of manually collecting the data and formatting it properly was consuming a fair amount of his time, especially given that this was a once- or twice-weekly process.</description>
     </item>
     
   </channel>
